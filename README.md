@@ -15,6 +15,8 @@ We use the depth model, camera intrinsics and ROI selection of the path of the f
     Phase 3: Inference
 The depth model is dropped and inference is solely run on yolo model using homography. Skips directly to phase 3 if focal_length.npy and homography_matrix.npy files are already available in the current path.
 
+Download the Depth-Anything-V2-Metric-Indoor here:
+https://huggingface.co/depth-anything/Depth-Anything-V2-Metric-Indoor-Small-hf/
 
 
 ## Install Requirements
