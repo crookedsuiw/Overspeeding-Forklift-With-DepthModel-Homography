@@ -1,25 +1,22 @@
-# Forklift Overspeeding Detection
+# Forklift Overspeeding Detection using yolo
 
-This project detects forklifts in video, estimates their real-world movement speed, and identifies overspeeding using:
+This project detects forklifts in video, estimates their real-world movement speed, and identifies overspeeding from a still frame monocular camera and inference efficiently on a cpu.
 
-- Ultralytics YOLO object detection and tracking
-- Depth Anything V2 metric depth estimation
-- Automatic focal-length calibration
-- Homography-based image-to-world coordinate conversion
-- Exponential moving average speed smoothing
+It works in 3 Phases:
 
-## Requirements
+    Phase 1: Calibrating camera intrinsics:
+We run the depth model and yolo model on forklift frames to calibrate the camera intrinsics.
 
-- Windows
-- Python 3.9+
-- OpenCV
-- NumPy
-- PyTorch
-- Transformers
-- Ultralytics
-- Pillow
+    Phase 2: Calibrating Homography Plane:
+We use the depth model, camera intrinsics and ROI selection of the ground/path of the forklift to calibrate Homography.
 
-Install the dependencies:
+    Phase 3: Inference
+The depth model is dropped and inference is solely run on yolo model using homography.
 
-````powershell
-pip install opencv-python numpy torch transformers ultralytics pillow
+
+
+## Install Requirements
+
+'''bash
+pip install uv
+uv pip install requirements.txt
