@@ -18,6 +18,11 @@ The depth model is dropped and inference is solely run on yolo model using homog
 Download the Depth-Anything-V2-Metric-Indoor here:
 https://huggingface.co/depth-anything/Depth-Anything-V2-Metric-Indoor-Small-hf/
 
+Use this technique for traffic speed estimation using cctv. Make sure to swap in the outdoor depth anything to avoid OOD error. However it generalized poorly on indian traffic roads in my testing.
+depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf
+
+VehiclesDXyolo11s.pt is a custom trained on BMD-45 dataset (Indian traffic vehicles and conditions)
+
 
 ## Install Requirements
 
